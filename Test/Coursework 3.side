@@ -1,0 +1,133 @@
+{
+  "id": "1e228447-065c-4409-90ad-9f5f5f76f24d",
+  "version": "2.0",
+  "name": "Coursework 3",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "784383ed-b21a-4779-a3f7-0f7261045bb1",
+    "name": "html",
+    "commands": [{
+      "id": "027f2474-0956-49f0-b1ea-2157e031d5e7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f819b0d-236f-4e35-b5ea-f884f70f96aa",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recipes",
+      "targets": [
+        ["linkText=Recipes", "linkText"],
+        ["css=.navLinks > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Recipes')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#recipePage')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Recipes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b98eabaf-1f10-4d50-9594-3c57909244a3",
+      "comment": "",
+      "command": "click",
+      "target": "css=#recipe-1 > .recipe-image-url",
+      "targets": [
+        ["css=#recipe-1 > .recipe-image-url", "css:finder"],
+        ["xpath=//img[@alt='recipeImg']", "xpath:img"],
+        ["xpath=//a[@id='recipe-1']/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "996941f3-d303-4b57-ba4d-354ef89e3b07",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recipes",
+      "targets": [
+        ["linkText=Recipes", "linkText"],
+        ["css=.navLinks > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Recipes')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#recipePage')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Recipes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f42365ae-2cbb-4a3d-9add-f7296a19eb00",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=(//div[@id='recipe-card']/div[2]/h2)[2]",
+      "targets": [
+        ["xpath=(//div[@id='recipe-card']/div[2]/h2)[2]", "xpath:idRelative"],
+        ["xpath=//section/div[2]/div[2]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Turkish Scrambled Eggs')]", "xpath:innerText"]
+      ],
+      "value": "Turkish Scrambled Eggs"
+    }, {
+      "id": "79943514-3646-4aae-9404-b3b383579230",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//div[@id='recipe-card']/div[2]/div)[5]",
+      "targets": [
+        ["xpath=(//div[@id='recipe-card']/div[2]/div)[5]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2f4983c-d9de-4ba8-80b8-0b89cd87fb22",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=(//div[@id='recipe-card']/div[2]/div/span)[9]",
+      "targets": [
+        ["xpath=(//div[@id='recipe-card']/div[2]/div/span)[9]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/span", "xpath:position"]
+      ],
+      "value": "Dessert"
+    }, {
+      "id": "1392283b-f2cf-4ab4-9af2-ae9d6dffe305",
+      "comment": "",
+      "command": "click",
+      "target": "css=#recipe-5 > #myImage",
+      "targets": [
+        ["css=#recipe-5 > #myImage", "css:finder"],
+        ["xpath=(//img[@alt='recipeImg'])[5]", "xpath:img"],
+        ["xpath=(//img[@id='myImage'])[5]", "xpath:attributes"],
+        ["xpath=//a[@id='recipe-5']/img", "xpath:idRelative"],
+        ["xpath=//div[5]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e54f0918-bbce-467a-9902-6211cb48274a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#ingredients > li:nth-child(5)",
+      "targets": [
+        ["css=#ingredients > li:nth-child(5)", "css:finder"],
+        ["xpath=//ul[@id='ingredients']/li[5]", "xpath:idRelative"],
+        ["xpath=//div/ul/li[5]", "xpath:position"]
+      ],
+      "value": "1/2 teaspoon baking powder"
+    }, {
+      "id": "732f44c2-a8b0-40ee-a7e6-638b87b0c173",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.ri-logout-box-line",
+      "targets": [
+        ["css=.ri-logout-box-line", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "092e869d-7c2a-42d8-807a-71640c0af2e1",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["784383ed-b21a-4779-a3f7-0f7261045bb1"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
