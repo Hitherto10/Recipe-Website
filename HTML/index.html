@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All-Star Recipes</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/1f79bce4b4e896b3422152b9fb916964?family=Anglecia+Pro+Dsp+SmBd" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<!---------------------------------NAVIGATION BAR---------------------------------------->
+<nav class="navBar">
+<!--    Navigation Links-->
+    <ul class="navLinks">
+        <li><a href="#homePage">Home</a></li>
+        <li><a href="#recipePage">Recipes</a></li>
+        <li><a href="#aboutPage">About</a></li>
+    </ul>
+    <div class="logo">
+        <a onclick="">All-Star Recipes</a>
+        <p>Easy & Tasty Recipes</p>
+    </div>
+    <div class="icons">
+        <a onclick="logoutUser()"><i class="ri-logout-box-line"></i></a>
+        <a onclick="$('#addRecipe').show().siblings('.page').hide();"><i class="ri-file-add-line"></i></a>
+    </div>
+</nav>
+
+
+<!---------------------------------LOGIN/SIGNUP PAGE------------------------------------->
+<div class="registerPage page" id="registerPage">
+    <h2>Sign in/up Form</h2>
+    <div class="container" id="container">
+
+        <!--            Sign Up Form-->
+        <div class="form-container sign-up-container">
+            <form>
+                <h1>Create Account</h1>
+                <label>
+                    <input id="name" type="text" placeholder="Name" required/>
+                </label>
+                <label>
+                    <input id="email" type="email" placeholder="Email" required/>
+                </label>
+                <label>
+                    <input id="password" type="password" placeholder="Password" required/>
+                </label>
+                <button class="registerButton" onclick="submitUserData()">Sign Up</button>
+                <a class="ghost" id="signIn">Already have an account? Sign In</a>
+            </form>
+        </div>
+
+        <!--            Sign In form-->
+        <div class="form-container sign-in-container">
+            <form>
+                <h1>Sign in</h1>
+                <label>
+                    <input id="user_email" type="email" placeholder="Email" required/>
+                </label>
+                <label>
+                    <input id="user_password" type="password" placeholder="Password" required/>
+                </label>
+                <button class="registerButton" onclick="verifyLoginRequest()">Sign In</button>
+                <a class="ghost" id="signUp">Dont have an account? Sign Up</a>
+            </form>
+        </div>
+
+        <!--            Image Overlay for Login/Signup Container-->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left"></div>
+                <div class="overlay-panel overlay-right"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---------------------------------HOME PAGE--------------------------------------------->
+<div class="homePage page" id="homePage">
+
+    <div class="webIntro">
+        <div class="content">
+            <span>QUALITY AND TRADITION <br>TASTY & FRESH<br></span>
+            <p>Join our community of food lovers and share your favorite recipes</p>
+            <button onclick="$('#recipePage').show().siblings('.page').hide();" class="recipeButton" id="recipeButton">View All Recipes</button>
+        </div>
+    </div>
+
+    <!--Recipe Categories Featured on Website-->
+    <div class="recipes-container">
+        <h2 class="recipes-title">FEATURED CATEGORIES</h2>
+        <div class="circles-container">
+            <div>
+                <div class="foodCat recipe-nav-link" style="background-image: url('/ASSETS/popcorn.jpg')">
+                    <span style="display: none">Snack</span>
+                </div>
+                <h3>SNACKS</h3>
+            </div>
+
+            <div>
+                <div class="foodCat recipe-nav-link" style="background-image: url('/ASSETS/breakfast.jpg')">
+                    <span style="display: none">Breakfast</span>
+                </div>
+                <h3>BREAKFAST</h3>
+            </div>
+
+            <div>
+                <div class="foodCat recipe-nav-link" style="background-image: url('/ASSETS/lunch.jpg')">
+                    <span style="display: none">Lunch</span>
+                </div>
+                <h3>LUNCH</h3>
+            </div>
+
+            <div>
+                <div class="foodCat recipe-nav-link" style="background-image: url('/ASSETS/dinner.jpg')">
+                    <span style="display: none">Dinner</span>
+                </div>
+                <h3>DINNER</h3>
+            </div>
+
+            <div>
+                <div class="foodCat recipe-nav-link" style="background-image: url('/ASSETS/dessert.jpg')">
+                    <span style="display: none">Dessert</span>
+                </div>
+                <h3>DESSERT</h3>
+            </div>
+
+            <div>
+                <div class="foodCat recipe-nav-link" style="background-image: url('/ASSETS/drinks.jpg')">
+                    <span style="display: none">Drinks</span>
+                </div>
+                <h3>DRINKS</h3>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--Page Intersecting Image-->
+    <div class="imageIntersection"></div>
+
+
+    <!--Favourite Recipes-->
+    <div class="recipes-container">
+        <h2 class="recipes-title">People's Favourites</h2>
+        <div class="circles-container">
+            <div>
+                <div class="square" style="background-image: url('/ASSETS/turkscrameggs.webp')"></div>
+                <h3>Turkish Scrambled Eggs</h3>
+            </div>
+
+            <div>
+                <div class="square" style="background-image: url('/ASSETS/chowder.webp')"></div>
+                <h3>Shrimp and Chorizo Chowder</h3>
+            </div>
+
+            <div>
+                <div class="square" style="background-image: url('/ASSETS/french.webp')"></div>
+                <h3>Fresh Press Coffee</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Recipe of the Day-->
+    <div class="recipeDay">
+
+        <div class="imageBox"></div>
+
+        <div class="textBox">
+            <h4>PICK OF THE DAY<br><br><br></h4>
+            <span>BBQ Chicken on the Grill <br>BRUNTS & RICE<br><br></span>
+            <p>
+                3 Ingredients Needed<br>
+                •	&nbsp;&nbsp;4 pounds bone-in, skin-on chicken parts <br>(legs, thighs, wings, breasts)<br><br>
+                1 Bowl<br>
+                •	&nbsp;&nbsp;Kosher salt<br><br>
+                30 Minutes<br>
+                •	&nbsp;&nbsp;Extra virgin olive oil or vegetable oil<br><br>
+            </p>
+
+            <h3>Sure to impress your guests.</h3>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!---------------------------------RECIPE PAGE------------------------------------------->
+<div class="recipePage page" id="recipePage">
+
+    <!--    Recipe Navigation Bar-->
+    <header class="page-header">
+        <h5 class="page-title">Recipes</h5>
+        <nav class="recipe-nav">
+<!--            Filter Links For Recipe Categories-->
+            <ul class="recipe-nav-list">
+                <li class="recipe-nav-item"><a class="recipe-nav-link" href="#">All Recipes</a></li>
+                <li class="recipe-nav-item"><a class="recipe-nav-link" href="#">Snack</a></li>
+                <li class="recipe-nav-item"><a class="recipe-nav-link" href="#">Breakfast</a></li>
+                <li class="recipe-nav-item"><a class="recipe-nav-link" href="#">Lunch</a></li>
+                <li class="recipe-nav-item"><a class="recipe-nav-link" href="#">Dinner</a></li>
+                <li class="recipe-nav-item"><a class="recipe-nav-link" href="#" >Dessert</a></li>
+                <li class="recipe-nav-item"><a class="recipe-nav-link" href="#">Drinks</a></li>
+                <li class="recipe-nav-item"><a class="recipe-nav-link" href="#">My Recipes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--    Recipes Container-->
+    <section id="recipes" class="recipe-grid"></section>
+
+</div>
+
+
+<!---------------------------------RECIPE DETAILS PAGE----------------------------------->
+<div class="recipeDetails page" id="recipeDetails">
+
+    <!--    RECIPE TITLE, CATEGORY & TIME TO MAKE-->
+    <div class="recipeSingleTitle" id="recipesSingle"></div>
+
+    <!--    RECIPE IMAGE & INGREDIENTS-->
+    <div class="recipeSingle">
+
+        <div class="recipeImageBox" id="recipeImageBox"></div>
+
+        <div class="ingredientBox">
+            <h4>INGREDIENTS<br><br><br></h4>
+            <div class="ingredients">
+                <ul class="ingredientList" id="ingredients"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!--    RECIPE DIRECTIONS-->
+    <div class="directions">
+        <h6>Steps To Make</h6>
+        <ol class="directionList" id="directionList"></ol>
+    </div>
+
+    <!--    RECIPE DESCRIPTION-->
+    <div class="description">
+        <div class="descriptionBox">
+            <div class="DescriptionTextBox">
+                <h4>Description</h4>
+                <div class="Description" id="Description"></div>
+            </div>
+            <div class="recipeDescriptionImage"></div>
+        </div>
+    </div>
+
+</div>
+
+
+<!---------------------------------ABOUT PAGE-------------------------------------------->
+<div class="aboutPage page" id="aboutPage">
+    <div class="aboutIntro"></div>
+
+    <div class="recipeSingleTitle">
+
+        <br><h6 style="font-size: 3.75rem">Welcome To All-Star Recipes <br> Cooking Blog!</h6>
+
+        <p style="font-size: 15px">
+            Simply Recipes is here to help you cook <br> delicious meals with less stress and more joy <br>more joy.
+        </p>
+
+    </div>
+
+    <!--    RECIPE DESCRIPTION-->
+    <div class="description">
+        <div class="aboutBox">
+            <div class="aboutTextBox">
+                <h4 style="font-size: 35px">About Us</h4>
+                <div class="Description">
+                    Our recipes primarily use fresh, unprocessed ingredients but we also believe there is a time
+                    and a place for canned, frozen, and other prepared ingredients. We believe in a diet that
+                    includes a wide variety of foods: real butter and cream, extra virgin olive oil, eggs, lots of
+                    fruits and vegetables, and protein from meat, fish, beans, and cheese. Plus cake for dessert.
+                </div>
+            </div>
+            <div class="recipeAboutImage"></div>
+        </div>
+    </div>
+
+    <div class="contempContainer">
+        <div class="recipeAbImage"></div>
+
+        <div class="abTextBox">
+            <div class="Description">
+                To make sure each of these standards is met, we start by working with expert recipe developers
+                — people with the experience and knowledge to not only develop a good recipe in their own
+                kitchens, but to make sure that recipe works in yours. Next, we thoroughly review and edit every
+                recipe in-house line by line. Finally, each new recipe is run by our team of recipe testers
+                working in home kitchens with the same pots, pans, and tools that you use in yours.
+                Only after all this is the recipe shared on All Star Recipes.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!---------------------------------ADD RECIPE PAGE-------------------------------------------->
+<div class="addRecipe page" id="addRecipe">
+    <br><br><br>
+    <h6>Submit your recipe to All Star!</h6>
+
+<!--    Form to add recipes to website-->
+    <form id="addRecipeForm" class="addRecipeForm">
+        <label for="titleInput">Title</label>
+        <input type="text" id="titleInput" name="title"><br><br>
+
+        <label for="descriptionInput">Description</label>
+        <textarea id="descriptionInput" style="width: 427px; height: 104px" name="description"></textarea><br><br>
+
+        <label for="timeToMakeInput">Time to Make</label>
+        <input type="number" id="timeToMakeInput" name="time_to_make"><br><br>
+
+        <label for="categoryInput">Category</label>
+        <input type="text" id="categoryInput" name="category"><br><br>
+
+        <h2>Ingredients</h2>
+        <div id="ingredientInputsContainer">
+            <div class="ingredientInput" data-ingredient-id="1">
+                <label>Name</label>
+                <input type="text" class="nameInput" name="ingredient_name"><br><br>
+
+                <label>Amount</label>
+                <input type="text" class="amountInput" name="ingredient_amount"><br><br>
+            </div>
+        </div>
+        <button class="registerButton" type="button" id="addIngredientButton">Add Ingredient</button><br><br>
+
+        <h2>Instructions</h2>
+        <div id="instructionInputsContainer">
+            <div class="instructionInput" data-step-number="1">
+                <label>Step</label>
+                <textarea class="descriptionInput" style="width: 427px; height: 104px" name="instruction_description"></textarea><br><br>
+            </div>
+        </div>
+
+        <button class="registerButton" type="submit">Add Recipe</button>
+    </form>
+
+</div>
+
+<!---------------------------------FOOTER------------------------------------------------>
+<footer>
+    <div class="footer-content">
+        <h3>All Star Recipe</h3>
+        <p>Easy healthy recipes that make you feel good!</p>
+        <div class="footerBox">
+            <ul class="socials">
+                <li><a><i class="fa fa-facebook"></i></a></li>
+                <li><a><i class="fa fa-twitter"></i></a></li>
+                <li><a><i class="fa fa-google-plus"></i></a></li>
+                <li><a><i class="fa fa-youtube"></i></a></li>
+                <li><a><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2023 designed by <span>HITHERTO</span></p>
+    </div>
+</footer>
+
+
+</body>
+
+<script  src="/JS/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</html>
+

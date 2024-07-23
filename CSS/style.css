@@ -1,0 +1,858 @@
+@import url(//db.onlinewebfonts.com/c/1f79bce4b4e896b3422152b9fb916964?family=Anglecia+Pro+Dsp+SmBd);
+
+/*All css font style*/
+*{
+    font-weight: normal;
+}
+
+/*style for HTML body*/
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: url('../ASSETS/Durat.png');
+    position: relative;
+}
+
+/*HEADER TEXT STYLES*/
+h3 {
+    font-family: "Poppins", serif;
+}
+h4 {
+    font-family: "Poppins", serif;
+    font-size: 10px;
+    font-weight: bold;
+}
+h5{
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "Anglecia Pro Dsp SmBd", serif;
+    margin-bottom: 45px;
+}
+h6{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Anglecia Pro Dsp SmBd", serif;
+    margin-bottom: 20px;
+}
+
+
+/*Hide pages aside from Home page*/
+.recipeDetails,
+.aboutPage,
+.recipePage,
+.addRecipe,
+.registerPage
+{
+    display: none;
+}
+
+/*Always display navigation bar and footer*/
+.navBar, footer {
+    display: block;
+}
+
+/*Style for the top navigation bar*/
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /*set navbar to always be on top*/
+    z-index: 7;
+}
+
+
+/*style for the navigation links container*/
+.navLinks {
+    list-style: none;
+    margin: 0 110px;
+    padding: 0;
+}
+
+
+/*style for the navigation links*/
+.navLinks li {
+    display: inline-block;
+    margin-right: 30px;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+}  .navLinks a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}  .navLinks li a {
+    padding: 4px 16px;
+    position: relative;
+}  .navLinks  a:hover{
+    border: 1px solid rgb(208, 196, 190);
+    border-radius: 15px;
+    transition: border 200ms ease-in-out;
+}
+
+
+/*style for the website logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}  .logo a {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Anglecia Pro Dsp SmBd", serif;
+    margin: auto;
+    position: relative;
+    right: 63%;
+}  .logo p {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    position: relative;
+    right: 63%;
+}
+
+
+/*style for the icons on the navigation bar */
+.icons {
+    margin-right: 110px;
+    gap: 15px;
+    display: flex;
+}.icons a{
+    font-size: 25px;
+ }
+
+     /*style for the favourite button in the recipe page*/
+.favouriteIcon{
+    background: none;
+    font-size: 25px;
+    position: relative;
+    margin-left: 50px;
+    border: none;
+} .favouriteIcon:active{
+      color: black;
+  }
+
+
+/*style for the starting image onload*/
+.webIntro{
+    padding:2rem 9%;
+    align-items: center;
+    min-height: 80vh;
+    display: flex;
+    /*image formatting*/
+    background-image: url(../ASSETS/pexels-ella-olsson-1640773.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aboutIntro{
+    padding:2rem 9%;
+    align-items: center;
+    min-height: 80vh;
+    display: flex;
+    /*image formatting*/
+    background-image: url(../ASSETS/aboutIntro.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*STYLE FOR THE WEBSITE INTO TEXT OF THE WEBSITE*/
+.content {
+    margin: auto;
+    position: relative;
+    top: 10vh;
+    left: 30px;
+    text-align: center;
+}  .content span {
+    font-size: 50px;
+    font-family: "Anglecia Pro Dsp SmBd", serif;
+    opacity: 0;
+    /*set animation to show the intro text*/
+    transform: translateY(-50px);
+    animation: slideIn 1.0s ease-out 0.6s forwards;
+}  .content p {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    /*set animation to show the intro text*/
+    transform: translateY(-50px);
+    animation: slideIn 1.0s ease-out 0.8s forwards;
+}
+
+/*effects for text to smoothly slide into the screen*/
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*style for button to view recipes on home page*/
+.recipeButton{
+    opacity: 0;
+    padding: 12px 32px;
+    border-width: 1px;
+    border-radius: 10px;
+    transition: all 200ms ease;
+    color: #23262e;
+    /*set animation to show the intro text*/
+    transform: translateY(-50px);
+    animation: slideIn 1.0s ease-out 1.0s forwards;
+}
+.recipeButton:hover{
+    background-color: #23262e;
+    color: #fff;
+}
+
+
+/*container that holds recipe types*/
+.recipes-container {
+    text-align: center;
+    padding: 80px 50px;
+}
+
+
+/*style for the recipe title*/
+.recipes-title {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Anglecia Pro Dsp SmBd", serif;
+    margin-bottom: 60px;
+}
+
+
+/*container that holds recipe images and recipe names*/
+.circles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}  .circle {
+    width: 340px;
+    height: 340px;
+    border-radius: 5px;
+    margin: 0 10px;
+    background-size: cover;
+    background-position: center;
+    transition: all 200ms ease;
+}  .circle:hover{
+    transition: all 200ms ease;
+    transform: scale(1.05);
+}
+
+
+/*container for the second recipe container*/
+.square {
+    width: 420px;
+    height: 540px;
+    border-radius: 5px;
+    margin: 0 10px;
+    background-size: cover;
+    background-position: center;
+    transition: all 200ms ease;
+}  .square:hover{
+    transition: all 200ms ease;
+    transform: scale(1.05);
+}
+
+
+/*container for the food category */
+.foodCat {
+    width: 265px;
+    height: 300px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    transition: all 200ms ease;
+    color: transparent;
+}  .foodCat:hover{
+    transition: all 200ms ease;
+    transform: scale(1.05);
+}
+
+
+/*style for image that intersects the page*/
+.imageIntersection{
+    padding:2rem 9%;
+    align-items: center;
+    display: flex;
+    height: 450px;
+    /*set the image format for the image intersection*/
+    background-image: url(../ASSETS/60953f9b40300983a6312ee1_louis-hansel-TzY5_DkDyjg-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*style for the recipe of the day container*/
+.recipeDay{
+    position: relative;
+    margin: auto auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*style for the box containing an image*/
+.imageBox{
+    width: 30%;
+    height: 700px;
+    background: url(../ASSETS/shiskabab.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+/*style for the text container for the corresponding image*/
+.textBox{
+    width: 30%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background: #dcdedd;
+    color: #3a4a42;
+}
+
+/*style and effects for the view recipe button*/
+.viewRecipeBTN{
+    padding: 5px 15px;
+    border-width: 1px;
+    border-radius: 3px;
+    transition: all 200ms ease;
+    font-family: 'Poppins', sans-serif;
+    color: #23262e;
+}  .viewRecipeBTN:hover{
+    background-color: #23262e;
+    color: #fff;
+    transition: all 200ms ease;
+
+}
+
+/*style for the textbook span*/
+.textBox span {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Anglecia Pro Dsp SmBd", serif;
+}
+
+/*style for the textbook <p> tag*/
+.textBox p{
+    padding: 5px 5px 5px 20px;
+    text-align: left;
+    font-size: 15px;
+}
+
+/*style for the footer container*/
+footer{
+    margin-top: 180px;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans", serif;
+    padding-top: 40px;
+    color: #fff;
+}  .footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}  .footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}  .footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+/*style for the social media images/containers*/
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}  .socials li{
+    margin: 0 10px;
+}  .socials a{
+    text-decoration: none;
+    color: #fff;
+}  .socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}  .socials a:hover i{
+    color: aqua;
+}
+
+/*style for the buttom part of the footer*/
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}  .footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}  .footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}  .footerBox{
+    border: 1px solid white;
+    border-right: none;
+    border-left: none;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/*style for the recipe page*/
+.recipePage{
+    position: relative;
+    margin-top: 150px;
+}
+
+/*style for the recipe page header*/
+.page-header {
+    text-align: center;
+}
+
+/*style for the recipe page navigation container*/
+.recipe-nav {
+    display: flex;
+    justify-content: center;
+}
+
+/*style for the recipe page navigation links*/
+.recipe-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    width: 75%;
+}  .recipe-nav-item {
+    margin: 0;
+}  .recipe-nav-link {
+    text-decoration: none;
+    font-family: "Poppins", serif;
+    color: #333;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+}  .recipe-nav-link:hover {
+    border: 1px solid rgb(208, 196, 190);
+    border-radius: 15px;
+    transition: border 200ms ease-in-out;
+}
+
+/*style for the recipe lists to be displayed*/
+.recipe-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 30px;
+    gap: 80px;
+    justify-content: center;
+}
+
+
+/*style for eac recipe card*/
+.recipe-card,
+.recipes-card{
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/*style for the recipe preview on recipe page*/
+.recipe-image {
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+}  .recipe-image-url {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}  .recipe-details {
+    padding: 20px;
+    background-color: #fff;
+    flex: 1;
+}  .recipe-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}  .recipe-type i {
+    font-size: 20px;
+    margin-right: 5px;
+    color: #f57c00;
+}  .recipe-type span {
+    font-size: 16px;
+    color: #555;
+}  .recipe-title {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/*style for the single recipe details*/
+.recipeSingle{
+    position: relative;
+    margin-top: 150px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/*style for the image box*/
+.recipeImageBox{
+    width: 39%;
+    height: 700px;
+    position: relative;
+    bottom: 100px;
+}
+
+/*style for the ingredient container*/
+.ingredientBox{
+    width: 39%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    bottom: 100px;
+    background: #dcdedd;
+    color: #3a4a42;
+}  .ingredientBox h4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}  .ingredientList{
+    position: relative;
+    bottom: 100px;
+}
+
+/*style for the recipe title*/
+.recipeSingleTitle {
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+}  .recipeSingleTitle p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}  .recipe-dets span{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+/*style for the recipe directions/instructions*/
+.directions{
+    position: relative;
+    left: 205px;
+    width: 55%;
+}  .directionList li{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    padding: 15px;
+}
+
+/*style for the Recipe description */
+.descriptionBox{
+    position: relative;
+    margin-top: 150px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/*style for the image beside the description*/
+.recipeDescriptionImage{
+    width: 39%;
+    height: 700px;
+    background: url(../ASSETS/pexels-sides-imagery-3351927.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    bottom: 100px;
+}  .DescriptionTextBox{
+    width: 40%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    bottom: 100px;
+    color: #3a4a42;
+}  .DescriptionTextBox h4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}  .Description{
+    padding: 45px;
+}
+
+/*style for the about box*/
+.aboutBox{
+    position: relative;
+    margin-top: 150px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+
+}  .recipeAboutImage{
+    width: 39%;
+    height: 700px;
+    background: url(../ASSETS/friedrice_veg.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    bottom: 100px;
+}  .aboutTextBox{
+    width: 40%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    bottom: 100px;
+    color: #3a4a42;
+}
+
+/*Style fora section of the about page*/
+.contempContainer{
+    position: relative;
+    padding: 40px;
+    margin-top: 150px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    background: #89a396;
+}
+
+/*style for am about page image*/
+.recipeAbImage{
+    height: 500px;
+    width: 44%;
+    background: url(../ASSETS/pexels-vincent-ma-janssen-1310777.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    top: 107px;
+}  .abTextBox{
+    width: 40%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    top: 10px;
+    color: #1f2623;
+}
+
+/*style for the form*/
+form {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+/*style for the form input*/
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 400px;
+}
+
+/*style for the login/register form container*/
+.container {
+    background-color: #fff;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    margin: auto;
+    top: 100px;
+    width: 70%;
+    min-height: 480px;
+}  .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}  .sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}  .container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+/*style for the sign up container*/
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container{
+    transform: translateX(-100%);
+}
+
+/*style for the overlay*/
+.overlay {
+    background-size: cover;
+    background: url(../ASSETS/60953f9b40300983a6312ee1_louis-hansel-TzY5_DkDyjg-unsplash.jpg) no-repeat center center;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+
+    transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+/*style for the over lay container*/
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+/*setting overlay effects*/
+.overlay-left {
+    transform: translateX(-20%);
+}  .container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}  .overlay-right {
+    right: 0;
+    transform: translateX(0);
+}  .container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+/*style for the register button*/
+.registerButton{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #242424;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.ghost{
+    cursor: pointer;
+}
+
+.addRecipe h6{
+    font-size: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.addRecipeForm{
+    width: 50%;
+    position: relative;
+    margin: auto;
+    background: none;
+}
